@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
 :root{
-    --main-color:#d3ad7f;
+    --main-color:#ad4424;
+    --button-color:#d4b05e;
     --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
@@ -42,7 +43,7 @@ body{
 }
 
 section{
-    padding:2rem 7%;
+    padding:5rem 7%;
 }
 
 .heading{
@@ -57,6 +58,9 @@ section{
     color:var(--main-color);
     text-transform: uppercase;
 }
+#womenSection{
+  padding-top: 7%;
+}
 
 .btn{
     margin-top: 1rem;
@@ -64,7 +68,7 @@ section{
     padding:.9rem 3rem;
     font-size: 1.7rem;
     color:#fff;
-    background: var(--main-color);
+    background: var(--button-color);
     cursor: pointer;
 }
 
@@ -273,7 +277,7 @@ section{
 .menu .box-container .box{
     padding:5rem;
     text-align: center;
-    border:var(--border);    
+    border:var(--border);
 }
 
 .menu .box-container .box img{
@@ -337,6 +341,15 @@ section{
 #ultra:hover{
     box-shadow: 0px 10px 25px
         rgb(255, 74, 2);
+}
+#rare img{
+  width: 100%;
+}
+#legendary img{
+  width: 100%;
+}
+#ultra img {
+  width: 100%;
 }
 .products .box-container .box .icons a{
     height: 5rem;
@@ -539,6 +552,9 @@ section{
 
 /* media queries  */
 @media (max-width:991px){
+  #womenSection{
+    padding-top: 5%;
+  }
 
     html{
         font-size: 55%;
@@ -552,10 +568,16 @@ section{
         padding:1rem;
     }
     .image img{
-        width: 85%;
+        width: 65%;
     }
     .heading{
-        padding: 10px 0;
+        padding-top: 5%;
+    }
+    .header .search-form.active{
+        transform: scaleX(1);
+        margin-top: 1%;
+        margin-right: -5%;
+
     }
 
 }
@@ -576,6 +598,9 @@ section{
 
     .header .navbar.active{
         right:0;
+    }
+    #womenSection{
+      padding-top: 10%;
     }
 
     .header .navbar a{
@@ -605,11 +630,14 @@ section{
         font-size: 1.5rem;
     }
     .image img{
-        width: 85%;
+        width: 75%;
     }
     .header .search-form.active{
         transform: scaleX(1);
         margin-top: -2%;
+    }
+    .heading{
+      padding-top: 5%;
     }
 
 }
@@ -620,11 +648,17 @@ section{
         font-size: 50%;
     }
     .image img{
-        width: 72%;
+        width: 52%;
     }
-        .header .search-form.active{
-            transform: scaleX(1);
-            margin-top: -2%;
-        }
+    .header .search-form.active{
+        transform: scaleX(1);
+        margin-right: 25%;
+        margin-top: -15%;
+        width: 200px;
+    }
+    #womenSection{
+      padding-top: 17%;
+    }
+  }
 
 }
