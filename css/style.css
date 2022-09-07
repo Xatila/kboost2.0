@@ -357,7 +357,7 @@ section{
     line-height: 5rem;
     font-size: 2rem;
     border:var(--border);
-    color:#fff;
+    color:white;
     margin:.3rem;
 }
 
@@ -396,6 +396,9 @@ section{
     text-decoration: line-through;
     font-weight: lighter;
     font-size: 1.5rem;
+}
+.fa-heart{
+    background-color: black;
 }
 
 .review .box-container{
