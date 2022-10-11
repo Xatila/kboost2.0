@@ -31,25 +31,23 @@ function pushAlert() {
   alert("Product has been aded to your cart!");
 }
 const hearts = document.getElementsByClassName("fas fa-heart");
-
-function likeRare() {
-  if(hearts[0].style.color == 'white'){
-   hearts[0].style.color = 'red';
-  }else{
-    hearts[0].style.color = 'white';
+function giveLike(typePromo) {
+  switch (typePromo) {
+    case "rare":
+      changeColor(hearts[0])
+      break;
+    case "legendary":
+      changeColor(hearts[1])
+      break;
+    case "ultra":
+      changeColor(hearts[2]);
+      break;
   }
 }
-function likeLegendary() {
-  if(hearts[1].style.color == 'white'){
-   hearts[1].style.color = 'red';
-  }else{
-    hearts[1].style.color = 'white';
-  }
-}
-function likeUltra() {
-  if(hearts[2].style.color == 'white'){
-   hearts[2].style.color = 'red';
-  }else{
-    hearts[2].style.color = 'white';
+function changeColor(typePromo){
+  if (typePromo.style.color == "white") {
+    typePromo.style.color = "red";
+  } else {
+    typePromo.style.color = "white";
   }
 }
