@@ -2,8 +2,8 @@ export const getWomenClothes = () => [
   {
     image: "images/women_clothes/pants1.png",
     name: "grey pants",
-    price: "$15.99",
-    discountPrice: "$20.99",
+    price: "$20.99",
+    discountPrice: "$15.99",
   },
   {
     image: "images/women_clothes/pants2.png",
@@ -32,8 +32,8 @@ export const getWomenClothes = () => [
   {
     image: "images/women_clothes/pants6.png",
     name: "blue pants",
-    price: "$14.99",
-    discountPrice: "$20.99",
+    price: "$20.99",
+    discountPrice: "$14.99",
   },
   {
     image: "images/women_clothes/top1.png",
@@ -91,12 +91,12 @@ export const getWomenClothes = () => [
   },
 ];
 
-export const getMensClothes = () => [
+export const getMenClothes = () => [
   {
     image: "images/men_clothes/pants1.png",
     name: "grey pants",
-    price: "$15.99",
-    discountPrice: "$20.99",
+    price: "$20.99",
+    discountPrice: "$15.99",
   },
   {
     image: "images/men_clothes/pants2.png",
