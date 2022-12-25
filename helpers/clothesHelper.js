@@ -1,4 +1,4 @@
-const getWomenClothes = () => [
+export const getWomenClothes = () => [
   {
     image: "images/women_clothes/pants1.png",
     name: "grey pants",
@@ -91,7 +91,7 @@ const getWomenClothes = () => [
   },
 ];
 
-const getMensClothes = () => [
+export const getMensClothes = () => [
   {
     image: "images/men_clothes/pants1.png",
     name: "grey pants",
