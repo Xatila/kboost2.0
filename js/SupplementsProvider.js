@@ -1,24 +1,53 @@
-import { getSupplementsHelper } from "../helpers/supplementsHelper";
+import { getSupplements } from "../helpers/SupplementsItemsHelper.js";
+import { supplementsAddToCartButtonTextKey } from "../constants/TextKeys.js";
+import { SupplementsContentHandler } from "../helpers/SupplementsContentHandler.js";
+import {
+  SUPPLEMENTS_NEW_BOX_ELEMENT_CLASSNAME,
+  SUPPLEMENTS_PRICE_DIV_CLASSNAME,
+  SUPPLEMENTS_ADD_TO_CART_BUTTON_HREF,
+  SUPPLEMENTS_ADD_TO_CART_BUTTON_CLASSNAME,
+} from "./../constants/StrongHardCodedValues.js";
 
-const supplements = getSupplementsHelper();
+//get all the supplements from the helper
+const supplements = getSupplements();
 
-const SupplementsProvider = () => {
-  supplements.length &&
-    supplements.map((image, name, price, discountPrice) => (
-      <div class="box">
-        <img src={image} alt="" />
-        <h3>{name}</h3>
-        {discountPrice && (
-          <div class="price">
-            {discountPrice} <span>{price}</span>
-          </div>
-        )}
-        {!discountPrice && <div class="price">{price}</div>}
-        <a href="#box" class="btn">
-          add to cart
-        </a>
-      </div>
-    ));
-};
+//check(just in case) if the array's length in supplements is not false(not 0) to make sure that we got the elements and if we have them - map
+supplements.length &&
+  //we want to take the image, name, price and discountPrice from each element in the array so we destructure them in the curly brackets
+  supplements.map(({ image, name, price, discountPrice }) => {
+    //define all the elements we need for each supplement
+    const boxContainer = document.querySelector("#supplementsItems");
+    const newBoxElement = document.createElement("div");
+    const imageElement = document.createElement("img");
+    const supplementNameElement = document.createElement("h3");
+    const priceDiv = document.createElement("div");
+    const discountElement = document.createElement("span");
+    const addToCartButton = document.createElement("a");
 
-export default SupplementsProvider;
+    //add a new div in the supplements' box-container
+    boxContainer.appendChild(newBoxElement);
+
+    //add the specific className to the new div so we can use its styles
+    newBoxElement.className = SUPPLEMENTS_NEW_BOX_ELEMENT_CLASSNAME;
+
+    //add a new child which in this case is the img element and after that we set its src to be the image path of the element we are at the moment of the map
+    newBoxElement.appendChild(imageElement);
+    imageElement.src = image;
+
+    //add a new child which in this case is the h3 element and after that we set its text to be the name of the element we are at the moment of the map
+    newBoxElement.appendChild(supplementNameElement);
+    supplementNameElement.innerText = name;
+
+    //add a new div for the price of the supplement and the specific className for it so we can use its styles
+    newBoxElement.appendChild(priceDiv);
+    priceDiv.className = SUPPLEMENTS_PRICE_DIV_CLASSNAME;
+
+    //we use this helper function to check if we should have a div with the discount price and a span with the old price or just a div with the price of the supplement
+    SupplementsContentHandler(discountPrice, priceDiv, discountElement, price);
+
+    //add the button which is the last child of the newBoxElement and we add its text, href and className after that again - to use the styles for it
+    newBoxElement.appendChild(addToCartButton);
+    addToCartButton.innerText = supplementsAddToCartButtonTextKey;
+    addToCartButton.href = SUPPLEMENTS_ADD_TO_CART_BUTTON_HREF;
+    addToCartButton.className = SUPPLEMENTS_ADD_TO_CART_BUTTON_CLASSNAME;
+  });
