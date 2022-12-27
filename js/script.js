@@ -30,22 +30,17 @@ window.onscroll = () => {
 
 const hearts = document.getElementsByClassName("fas fa-heart");
 function giveLike(typePromo) {
-  switch (typePromo) {
-    case "rare":
-      changeColor(hearts[0]);
-      break;
-    case "legendary":
-      changeColor(hearts[1]);
-      break;
-    case "ultra":
-      changeColor(hearts[2]);
-      break;
-  }
+  typePromo === "rare" && changeColor(hearts[0]);
+  typePromo === "legendary" && changeColor(hearts[1]);
+  typePromo === "ultra" && changeColor(hearts[2]);
+  console.log(typePromo);
 }
 function changeColor(typePromo) {
-  if (typePromo.style.color == "white") {
+  const isWhiteColor = typePromo.style.color === "white";
+  if (isWhiteColor) {
     typePromo.style.color = "red";
-  } else {
+  }
+  if (!isWhiteColor) {
     typePromo.style.color = "white";
   }
 }

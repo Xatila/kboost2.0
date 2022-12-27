@@ -8,6 +8,8 @@ import {
   CLOTHES_PRICE_DIV_CLASSNAME,
   CLOTHES_ADD_TO_CART_BUTTON_HREF,
   CLOTHES_ADD_TO_CART_BUTTON_CLASSNAME,
+  CLOTHES_DIV_NAME_AND_PRICE_CLASSNAME,
+  CLOTHES_DIV_IMAGE_CLASSNAME,
 } from "./../constants/StrongHardCodedValues.js";
 
 const clothes = getClothes();
@@ -37,15 +39,15 @@ clothes.length &&
     getGender(image, menBoxContainer, womenBoxContainer, newBoxElement);
     newBoxElement.className = CLOTHES_NEW_BOX_ELEMENT_CLASSNAME;
     newBoxElement.appendChild(imageDiv);
-    imageDiv.className = "image";
+    imageDiv.className = CLOTHES_DIV_IMAGE_CLASSNAME;
     imageDiv.appendChild(imageElement);
     imageElement.src = image;
     newBoxElement.appendChild(nameAndPriceDiv);
-    nameAndPriceDiv.className = "content";
+    nameAndPriceDiv.className = CLOTHES_DIV_NAME_AND_PRICE_CLASSNAME;
     nameAndPriceDiv.appendChild(clothesNameElement);
     clothesNameElement.innerText = name;
     nameAndPriceDiv.appendChild(priceDiv);
-    priceDiv.className = "price";
+    priceDiv.className = CLOTHES_PRICE_DIV_CLASSNAME;
     ClothesContentHandler(discountPrice, priceDiv, discountElement, price);
     newBoxElement.appendChild(addToCartButton);
     addToCartButton.textContent = clothesAddToCartButtonTextKey;

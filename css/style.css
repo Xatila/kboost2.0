@@ -198,7 +198,8 @@ section {
 }
 
 .header .cart-items-container .cart-item img {
-  height: 7rem;
+  height: 60px;
+  width: 50px;
 }
 
 .header .cart-items-container .cart-item .content h3 {
@@ -282,7 +283,7 @@ section {
 }
 
 .menu .box-container .box {
-  padding: 5rem;
+  padding: 23px;
   text-align: center;
   border: var(--border);
 }
