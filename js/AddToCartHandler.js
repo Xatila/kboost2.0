@@ -14,14 +14,14 @@ export const AddToCartHandler = () => {
     checkOutButton.textContent = `BUY: $${price.toFixed(2)}`;
   };
   let buttons = document.querySelectorAll(".box .btn");
-  
+
   //Add EventListeners
   checkOutButton.addEventListener("click", getTotalPrice);
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       checkOutButton.textContent = "Check Out";
       let currentProduct = {};
-      //GetPrice
+      //Get Price
       const priceAsText = btn.previousElementSibling.textContent;
       let price = "";
       for (let i = 1; i < 6; i++) {
@@ -33,13 +33,13 @@ export const AddToCartHandler = () => {
         btn.previousElementSibling.previousElementSibling.textContent;
       alert(`${name} has been aded to your cart!`);
 
-      //GetPictureUrl
+      //Get Picture Path
       const picture =
         btn.previousElementSibling.previousElementSibling
           .previousElementSibling;
-      let pictureUrl = picture.src;
+      let picturePath = picture.src;
 
-      //CreateProduct
+      //Create Product
       const itemToAdd = document.createElement("div");
       itemToAdd.classList.add("cart-item");
       const deleteButton = document.createElement("span");
@@ -55,19 +55,19 @@ export const AddToCartHandler = () => {
       divContent.appendChild(itemName);
       divContent.appendChild(itemPrice);
 
-      //SetProductData
+      //Set Product Data
       itemName.textContent = name;
-      itemImg.src = pictureUrl;
+      itemImg.src = picturePath;
       itemPrice.textContent = `$${price}`;
       cartItem.insertBefore(itemToAdd, cartItem.children[0]);
       if (document.getElementById("emptyCart")) {
         document.getElementById("emptyCart").remove();
       }
 
-      //FillObject
+      //Fill Object
       currentProduct["name"] = name;
       currentProduct["price"] = price;
-      currentProduct["imgUrl"] = pictureUrl;
+      currentProduct["imgUrl"] = picturePath;
       allProducts.push(currentProduct);
       console.log(allProducts);
     });

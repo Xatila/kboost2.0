@@ -1,6 +1,6 @@
 import { getSupplements } from "../helpers/SupplementsItemsHelper.js";
 import { supplementsAddToCartButtonTextKey } from "../constants/TextKeys.js";
-import { AddToCartHandler } from "../js/AddToCartHandler.js"
+import { AddToCartHandler } from "../js/AddToCartHandler.js";
 import { SupplementsContentHandler } from "../helpers/SupplementsContentHandler.js";
 import {
   SUPPLEMENTS_NEW_BOX_ELEMENT_CLASSNAME,
