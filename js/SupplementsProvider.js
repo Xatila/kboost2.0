@@ -1,5 +1,6 @@
 import { getSupplements } from "../helpers/SupplementsItemsHelper.js";
 import { supplementsAddToCartButtonTextKey } from "../constants/TextKeys.js";
+import { AddToCartHandler } from "../js/AddToCartHandler.js"
 import { SupplementsContentHandler } from "../helpers/SupplementsContentHandler.js";
 import {
   SUPPLEMENTS_NEW_BOX_ELEMENT_CLASSNAME,
@@ -8,14 +9,10 @@ import {
   SUPPLEMENTS_ADD_TO_CART_BUTTON_CLASSNAME,
 } from "./../constants/StrongHardCodedValues.js";
 
-//get all the supplements from the helper
 const supplements = getSupplements();
 
-//check(just in case) if the array's length in supplements is not false(not 0) to make sure that we got the elements and if we have them - map
 supplements.length &&
-  //we want to take the image, name, price and discountPrice from each element in the array so we destructure them in the curly brackets
   supplements.map(({ image, name, price, discountPrice }) => {
-    //define all the elements we need for each supplement
     const boxContainer = document.querySelector("#supplementsItems");
     const newBoxElement = document.createElement("div");
     const imageElement = document.createElement("img");
@@ -47,7 +44,9 @@ supplements.length &&
 
     //add the button which is the last child of the newBoxElement and we add its text, href and className after that again - to use the styles for it
     newBoxElement.appendChild(addToCartButton);
-    addToCartButton.innerText = supplementsAddToCartButtonTextKey;
+    addToCartButton.textContent = supplementsAddToCartButtonTextKey;
     addToCartButton.href = SUPPLEMENTS_ADD_TO_CART_BUTTON_HREF;
     addToCartButton.className = SUPPLEMENTS_ADD_TO_CART_BUTTON_CLASSNAME;
   });
+
+AddToCartHandler();
