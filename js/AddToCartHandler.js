@@ -1,7 +1,7 @@
 export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
-  let productsCounter = document.querySelector(".cart-items-counter-container");
+  let productsCounter = document.querySelector(".cart-items-counter");
   productsCounter.innerText = allProducts.length;
 
   !allProducts && checkOutButton.setAttribute("disabled", "");

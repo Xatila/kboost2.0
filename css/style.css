@@ -119,7 +119,7 @@ section {
   display: inline-flex;
 }
 
-.cart-items-counter-container {
+.cart-items-counter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,6 +133,11 @@ section {
 
 .header .icons div:hover {
   color: var(--main-color);
+}
+
+.fa-shopping-cart:hover .cart-items-counter {
+  color: black;
+  background-color: white;
 }
 
 #menu-btn {
