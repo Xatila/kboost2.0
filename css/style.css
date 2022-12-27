@@ -310,16 +310,8 @@ section {
 }
 
 .menu .box-container .box:hover {
-<<<<<<< Updated upstream
   transform: translateY(-7px);
   box-shadow: 0px 10px 25px rgb(255, 255, 255);
-=======
-  background: rgb(255, 255, 255);
-}
-
-.menu .box-container .box:hover > * {
-  color: var(--black);
->>>>>>> Stashed changes
 }
 
 .products .box-container {
@@ -335,16 +327,10 @@ section {
 }
 .products .box-container .box:hover {
   transform: translateY(-7px);
-<<<<<<< Updated upstream
   box-shadow: 0px 10px 25px tomato;
 }
 #man:hover {
   transform: translateY(-7px);
-=======
-  box-shadow: 0px 10px 25px rgb(247, 30, 229);
-}
-#man:hover {
->>>>>>> Stashed changes
   box-shadow: 0px 10px 25px rgb(2, 196, 255);
 }
 #rare:hover {
@@ -660,12 +646,9 @@ section {
   #womenSection {
     padding-top: 17%;
   }
-<<<<<<< Updated upstream
 }
 
 .disabledCheckout {
   cursor: not-allowed;
   background-color: grey;
-=======
->>>>>>> Stashed changes
 }
