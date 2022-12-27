@@ -17,7 +17,7 @@ export const AddToCartHandler = () => {
   let buttons = document.querySelectorAll(".box .btn");
 
   //Add EventListeners
-  checkOutButton.addEventListener("click", getTotalPrice);
+  checkOutButton &&checkOutButton.addEventListener("click", getTotalPrice);
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       checkOutButton.textContent = "Check Out";

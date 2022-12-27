@@ -1,4 +1,4 @@
-export const getWomenClothes = () => [
+export const getClothes = () => [
   {
     image: "images/women_clothes/pants1.png",
     name: "grey pants",
@@ -89,9 +89,6 @@ export const getWomenClothes = () => [
     price: "$20.99",
     discountPrice: false,
   },
-];
-
-export const getMenClothes = () => [
   {
     image: "images/men_clothes/pants1.png",
     name: "grey pants",

@@ -5,3 +5,4 @@
 
 //Supplements
 export const supplementsAddToCartButtonTextKey = "add to cart";
+export const clothesAddToCartButtonTextKey = "add to cart";
