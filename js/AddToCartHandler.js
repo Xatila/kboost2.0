@@ -1,6 +1,8 @@
 export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
+  let productsCounter = document.querySelector(".cart-items-counter-container");
+  productsCounter.innerText = allProducts.length;
 
   !allProducts && checkOutButton.setAttribute("disabled", "");
   const getTotalPrice = () => {
@@ -17,7 +19,7 @@ export const AddToCartHandler = () => {
   let buttons = document.querySelectorAll(".box .btn");
 
   //Add EventListeners
-  checkOutButton &&checkOutButton.addEventListener("click", getTotalPrice);
+  checkOutButton && checkOutButton.addEventListener("click", getTotalPrice);
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       checkOutButton.textContent = "Check Out";
@@ -29,7 +31,7 @@ export const AddToCartHandler = () => {
         price += priceAsText[i];
       }
 
-      //GetName
+      //Get Name
       const name =
         btn.previousElementSibling.previousElementSibling.textContent;
       alert(`${name} has been aded to your cart!`);
@@ -55,6 +57,7 @@ export const AddToCartHandler = () => {
       itemToAdd.appendChild(divContent);
       divContent.appendChild(itemName);
       divContent.appendChild(itemPrice);
+      productsCounter.innerText = allProducts.length + 1;
 
       //Set Product Data
       itemName.textContent = name;

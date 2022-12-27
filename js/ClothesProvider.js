@@ -5,11 +5,11 @@ import { clothesAddToCartButtonTextKey } from "../constants/TextKeys.js";
 import { ClothesContentHandler } from "../js/ClothesContentHandler.js";
 import {
   CLOTHES_NEW_BOX_ELEMENT_CLASSNAME,
-  CLOTHES_PRICE_DIV_CLASSNAME,
   CLOTHES_ADD_TO_CART_BUTTON_HREF,
   CLOTHES_ADD_TO_CART_BUTTON_CLASSNAME,
   CLOTHES_DIV_NAME_AND_PRICE_CLASSNAME,
   CLOTHES_DIV_IMAGE_CLASSNAME,
+  CLOTHES_PRICE_DIV_CLASSNAME,
 } from "./../constants/StrongHardCodedValues.js";
 
 const clothes = getClothes();
@@ -25,17 +25,6 @@ clothes.length &&
     const priceDiv = document.createElement("div");
     const discountElement = document.createElement("span");
     const addToCartButton = document.createElement("a");
-
-    //     <div id="man" class="box">
-    //     <div class="image">
-    //         <img src="images/men_clothes/top1.png" alt="">
-    //     </div>
-    //     <div class="content">
-    //         <h3>black top</h3>
-    //         <div class="price">$13.99</div>
-    //     </div>
-    // </div>
-
     getGender(image, menBoxContainer, womenBoxContainer, newBoxElement);
     newBoxElement.className = CLOTHES_NEW_BOX_ELEMENT_CLASSNAME;
     newBoxElement.appendChild(imageDiv);

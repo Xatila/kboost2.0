@@ -108,11 +108,27 @@ section {
   padding-bottom: 0.5rem;
 }
 
-.header .icons div {
+.header .icons {
   color: #fff;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 3rem;
+}
+
+.header .icons div {
   margin-left: 2rem;
+  display: inline-flex;
+}
+
+.cart-items-counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  font-size: 14px;
+  transform: translateX(-30px) translateY(-6px);
 }
 
 .header .icons div:hover {
@@ -170,6 +186,7 @@ section {
   width: 35rem;
   background: #fff;
   padding: 0 1.5rem;
+  overflow: auto;
 }
 
 .header .cart-items-container.active {
@@ -330,6 +347,7 @@ section {
   transform: translateY(-7px);
   box-shadow: 0px 10px 25px tomato;
 }
+
 #man:hover {
   transform: translateY(-7px);
   box-shadow: 0px 10px 25px rgb(2, 196, 255);
