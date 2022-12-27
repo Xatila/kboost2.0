@@ -2,6 +2,7 @@ export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
 
+  !allProducts && checkOutButton.setAttribute("disabled", "");
   const getTotalPrice = () => {
     let price = 0;
     for (const product of allProducts) {
