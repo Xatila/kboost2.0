@@ -60,9 +60,6 @@ section {
   color: var(--main-color);
   text-transform: uppercase;
 }
-#womenSection {
-  padding-top: 7%;
-}
 
 .btn {
   margin-top: 1rem;
@@ -265,6 +262,13 @@ section {
   line-height: 1.8;
   padding: 1rem 0;
   color: #eee;
+}
+
+.about,
+.review,
+.menu,
+.contact {
+  padding-top: 120px;
 }
 
 .about .row {
@@ -563,10 +567,6 @@ section {
 
 /* media queries  */
 @media (max-width: 991px) {
-  #womenSection {
-    padding-top: 5%;
-  }
-
   html {
     font-size: 55%;
   }
@@ -607,9 +607,6 @@ section {
 
   .header .navbar.active {
     right: 0;
-  }
-  #womenSection {
-    padding-top: 10%;
   }
 
   .header .navbar a {
@@ -663,12 +660,9 @@ section {
     margin-top: -15%;
     width: 200px;
   }
-  #womenSection {
-    padding-top: 17%;
-  }
-}
 
-#men:hover {
-  transform: translateY(-7px);
-  box-shadow: 0px 10px 25px rgb(2, 196, 255);
+  #men:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 25px rgb(2, 196, 255);
+  }
 }
