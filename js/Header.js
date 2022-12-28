@@ -7,6 +7,7 @@ class MyHeader extends HTMLElement {
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>K-boost</title>
+
         
             <!-- font awesome cdn link  -->
             <link
@@ -26,30 +27,28 @@ class MyHeader extends HTMLElement {
                 <img src="../images/logo.png" alt="" />
               </a>
         
-              <nav class="navbar">
+              <nav class="navbar" id="navbar">
                 <a href="../index.html">home</a>
                 <a href="../pages/about.html">about</a>
                 <a href="../pages/supplements.html">supplements</a>
-                <a href="../pages/reviews.html">review</a>
-                <a href="../pages/contact.html">contact</a>
                 <a href="../pages/clothes.html">clothes</a>
+                <a href="../pages/contact.html">contact</a>
               </nav>
         
               <div class="icons">
-                <div class="fas fa-search" id="search-btn"></div>
-                <!-- make items in cart stackable and removable + product counter at cart icon -->
-                <div class="fas fa-shopping-cart" id="cart-btn">
+                <div class="fas fa-search" id="search-btn" onclick="searchIconClickHandler()"></div>
+                <!-- make items in cart stackable and removable -->
+                <div class="fas fa-shopping-cart" id="cart-btn" onclick="cartIconClickHandler()">
                   <div class="cart-items-counter"></div>
                 </div>
-                <div class="fas fa-bars" id="menu-btn"></div>
               </div>
         
-              <div class="search-form">
+              <div class="search-form" id="search-form">
                 <input type="search" id="search-box" placeholder="Search" />
                 <label for="search-box" class="fas fa-search"></label>
               </div>
         
-              <div class="cart-items-container">
+              <div class="cart-items-container" id="cart-items">
                 <div id="emptyCart" class="cart-item">
                   <div class="content">
                     <h3>Your cart is empty.</h3>

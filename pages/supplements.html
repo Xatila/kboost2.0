@@ -1,5 +1,10 @@
+<script src="../js/NavBarIcons.js"></script>
+<script src="../js/PromoMessage.js"></script>
+<script src="../js/HeartsColorHandler.js"></script>
 <script type="module" src="../js/Header.js"></script>
 <script type="module" src="../js/Footer.js"></script>
+<script type="module" src="../js/SupplementsProvider.js"></script>
+
 <my-header></my-header>
 
 <!-- menu section starts  -->
@@ -10,7 +15,7 @@
 <!-- menu section ends -->
 
 <!-- promo section starts -->
-<section class="products" id="products">
+<section class="products promo" id="products">
   <h1 class="heading">promo <span>packs</span></h1>
 
   <div class="box-container">
@@ -19,7 +24,7 @@
         <a
           href="#rare"
           class="fas fa-shopping-cart"
-          onclick="promoMessage()"
+          onclick="PromoMessage()"
         ></a>
         <a href="#rare" class="fas fa-heart" onclick="giveLike('rare')"></a>
         <a href="#rare" class="fas fa-eye"></a>
@@ -45,7 +50,7 @@
         <a
           href="#legendary"
           class="fas fa-shopping-cart"
-          onclick="promoMessage()"
+          onclick="PromoMessage()"
         ></a>
         <a
           href="#legendary"
@@ -75,7 +80,7 @@
         <a
           href="#ultra"
           class="fas fa-shopping-cart"
-          onclick="promoMessage()"
+          onclick="PromoMessage()"
         ></a>
         <a href="#ultra" class="fas fa-heart" onclick="giveLike('ultra')"></a>
         <a href="#ultra" class="fas fa-eye"></a>

@@ -4,7 +4,7 @@ export const getGender = (
   womenBoxContainer,
   newBoxElement
 ) => {
-  const isMan = image.charAt(7) === "m";
+  const isMan = image.charAt(10) === "m";
 
   isMan && menBoxContainer.appendChild(newBoxElement);
   isMan && newBoxElement.setAttribute("id", "men");

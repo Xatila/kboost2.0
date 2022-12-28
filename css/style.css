@@ -3,7 +3,7 @@
 :root {
   --main-color: #ad4424;
   --button-color: #d4b05e;
-  --customGreyColor: #3a3939;
+  --black: #13131a;
   --bg: #010103;
   --border: 0.1rem solid rgba(255, 255, 255, 0.3);
 }
@@ -76,7 +76,7 @@ section {
 }
 
 .header {
-  background: var(--customGreyColor);
+  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -124,7 +124,7 @@ section {
   width: 14px;
   height: 14px;
   border-radius: 100%;
-  font-size: 14px;
+  font-size: 12px;
   transform: translateX(-30px) translateY(-6px);
 }
 
@@ -139,6 +139,10 @@ section {
 
 #menu-btn {
   display: none;
+}
+
+.menu {
+  padding-bottom: 0;
 }
 
 .header .search-form {
@@ -164,7 +168,7 @@ section {
   height: 100%;
   width: 100%;
   font-size: 1.6rem;
-  color: var(--customGreyColor);
+  color: var(--black);
   padding: 1rem;
   text-transform: none;
 }
@@ -173,7 +177,7 @@ section {
   cursor: pointer;
   font-size: 2.2rem;
   margin-right: 1.5rem;
-  color: var(--customGreyColor);
+  color: var(--black);
 }
 
 .header .search-form label:hover {
@@ -209,7 +213,7 @@ section {
   right: 1rem;
   font-size: 2rem;
   cursor: pointer;
-  color: var(--customGreyColor);
+  color: var(--black);
 }
 
 .header .cart-items-container .cart-item .fa-times:hover {
@@ -223,7 +227,7 @@ section {
 
 .header .cart-items-container .cart-item .content h3 {
   font-size: 2rem;
-  color: var(--customGreyColor);
+  color: var(--black);
   padding-bottom: 0.5rem;
 }
 
@@ -274,7 +278,7 @@ section {
 .about .row {
   display: flex;
   align-items: center;
-  background: var(--customGreyColor);
+  background: var(--black);
   flex-wrap: wrap;
 }
 
@@ -318,19 +322,19 @@ section {
   height: 10rem;
 }
 
-.menu .box-container .box h3 {
+h3 {
   color: #fff;
   font-size: 2rem;
   padding: 1rem 0;
 }
 
-.menu .box-container .box .price {
+.price {
   color: #fff;
   font-size: 2.5rem;
   padding: 0.5rem 0;
 }
 
-.menu .box-container .box .price span {
+.price span {
   font-size: 1.5rem;
   text-decoration: line-through;
   font-weight: lighter;
@@ -339,6 +343,14 @@ section {
 .menu .box-container .box:hover {
   transform: translateY(-7px);
   box-shadow: 0px 10px 25px rgb(255, 255, 255);
+}
+
+.promos {
+  padding-top: 60px;
+}
+
+.products {
+  padding-top: 0;
 }
 
 .products .box-container {
@@ -393,8 +405,16 @@ section {
   padding: 2.5rem 0;
 }
 
-.products .box-container .box .image img {
+.promo {
+  padding-top: 60px;
+}
+
+img {
   height: 25rem;
+}
+
+.review img {
+  height: 24px;
 }
 
 .products .box-container .box .content h3 {
@@ -464,7 +484,7 @@ section {
 
 .contact .row {
   display: flex;
-  background: var(--customGreyColor);
+  background: var(--black);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -512,7 +532,7 @@ section {
 }
 
 .footer {
-  background: var(--customGreyColor);
+  background: var(--black);
   text-align: center;
 }
 
@@ -610,7 +630,7 @@ section {
   }
 
   .header .navbar a {
-    color: var(--customGreyColor);
+    color: var(--black);
     display: block;
     margin: 1.5rem;
     padding: 0.5rem;
@@ -665,4 +685,9 @@ section {
     transform: translateY(-7px);
     box-shadow: 0px 10px 25px rgb(2, 196, 255);
   }
+}
+
+#men:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 10px 25px rgb(2, 196, 255);
 }

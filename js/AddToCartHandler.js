@@ -2,8 +2,9 @@ export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
   let productsCounter = document.querySelector(".cart-items-counter");
-  productsCounter.innerText = allProducts.length;
+  let cartItem = document.querySelector(".cart-items-container");
 
+  productsCounter.innerText = allProducts.length;
   !allProducts && checkOutButton.setAttribute("disabled", "");
   const getTotalPrice = () => {
     let price = 0;
@@ -63,7 +64,7 @@ export const AddToCartHandler = () => {
       itemName.textContent = name;
       itemImg.src = picturePath;
       itemPrice.textContent = `$${price}`;
-      cartItem.insertBefore(itemToAdd, cartItem.children[0]);
+      cartItem && cartItem.insertBefore(itemToAdd, cartItem.children[0]);
       if (document.getElementById("emptyCart")) {
         document.getElementById("emptyCart").remove();
       }
@@ -73,7 +74,6 @@ export const AddToCartHandler = () => {
       currentProduct["price"] = price;
       currentProduct["imgUrl"] = picturePath;
       allProducts.push(currentProduct);
-      console.log(allProducts);
     });
   });
 };

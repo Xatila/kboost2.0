@@ -22,25 +22,15 @@ class MyFooter extends HTMLElement {
           <a href="../index.html">home</a>
           <a href="../pages/about.html">about</a>
           <a href="../pages/supplements.html">supplements</a>
-          <a href="../pages/reviews.html">review</a>
-          <a href="../pages/contact.html">contact</a>
           <a href="../pages/clothes.html">clothes</a>
+          <a href="../pages/contact.html">contact</a>
           </div>
         
           <div class="credit">
             created by <span>Kevin Baliev</span> | all rights reserved
           </div>
         </section>
-        <!-- footer section ends -->
-        
-        <!-- supplements items provider -->
-        <script type="module" src="./SupplementsProvider.js"></script>
-        
-        <!-- custom js file link  -->
-        <script src="js/script.js"></script>
-        
-        <!-- clothes items provider -->
-        <script type="module" src="./ClothesProvider.js"></script>
+        <!-- footer section ends -->       
         </body>
         </html>
         `;

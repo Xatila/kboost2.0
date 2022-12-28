@@ -4,12 +4,9 @@ import { getGender } from "../helpers/ClothesGenderHelper.js";
 import { clothesAddToCartButtonTextKey } from "../constants/TextKeys.js";
 import { ClothesContentHandler } from "../js/ClothesContentHandler.js";
 import {
-  CLOTHES_NEW_BOX_ELEMENT_CLASSNAME,
-  CLOTHES_ADD_TO_CART_BUTTON_HREF,
-  CLOTHES_ADD_TO_CART_BUTTON_CLASSNAME,
-  CLOTHES_DIV_NAME_AND_PRICE_CLASSNAME,
-  CLOTHES_DIV_IMAGE_CLASSNAME,
-  CLOTHES_PRICE_DIV_CLASSNAME,
+  NEW_BOX_ELEMENT_CLASSNAME,
+  ADD_TO_CART_BUTTON_CLASSNAME,
+  PRICE_DIV_CLASSNAME,
 } from "./../constants/StrongHardCodedValues.js";
 
 const clothes = getClothes();
@@ -18,30 +15,30 @@ const womenBoxContainer = document.querySelector("#womenClothes");
 clothes.length &&
   clothes.map(({ image, name, price, discountPrice }) => {
     const newBoxElement = document.createElement("div");
-    const imageDiv = document.createElement("div");
     const imageElement = document.createElement("img");
-    const nameAndPriceDiv = document.createElement("div");
-    const clothesNameElement = document.createElement("h3");
+    const supplementNameElement = document.createElement("h3");
     const priceDiv = document.createElement("div");
     const discountElement = document.createElement("span");
-    const addToCartButton = document.createElement("a");
+    const addToCartButton = document.createElement("button");
+
     getGender(image, menBoxContainer, womenBoxContainer, newBoxElement);
-    newBoxElement.className = CLOTHES_NEW_BOX_ELEMENT_CLASSNAME;
-    newBoxElement.appendChild(imageDiv);
-    imageDiv.className = CLOTHES_DIV_IMAGE_CLASSNAME;
-    imageDiv.appendChild(imageElement);
+    newBoxElement.className = NEW_BOX_ELEMENT_CLASSNAME;
+
+    newBoxElement.appendChild(imageElement);
     imageElement.src = image;
-    newBoxElement.appendChild(nameAndPriceDiv);
-    nameAndPriceDiv.className = CLOTHES_DIV_NAME_AND_PRICE_CLASSNAME;
-    nameAndPriceDiv.appendChild(clothesNameElement);
-    clothesNameElement.innerText = name;
-    nameAndPriceDiv.appendChild(priceDiv);
-    priceDiv.className = CLOTHES_PRICE_DIV_CLASSNAME;
+
+    newBoxElement.appendChild(supplementNameElement);
+    supplementNameElement.innerText = name;
+
+    newBoxElement.appendChild(priceDiv);
+    priceDiv.className = PRICE_DIV_CLASSNAME;
+
     ClothesContentHandler(discountPrice, priceDiv, discountElement, price);
+
     newBoxElement.appendChild(addToCartButton);
+
     addToCartButton.textContent = clothesAddToCartButtonTextKey;
-    addToCartButton.href = CLOTHES_ADD_TO_CART_BUTTON_HREF;
-    addToCartButton.className = CLOTHES_ADD_TO_CART_BUTTON_CLASSNAME;
+    addToCartButton.className = ADD_TO_CART_BUTTON_CLASSNAME;
   });
 
 AddToCartHandler();
