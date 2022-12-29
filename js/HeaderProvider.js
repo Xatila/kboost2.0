@@ -38,9 +38,7 @@ class MyHeader extends HTMLElement {
               <div class="icons">
                 <div class="fas fa-search" id="search-btn" onclick="searchIconClickHandler()"></div>
                 <!-- make items in cart stackable and removable -->
-                <div class="fas fa-shopping-cart" id="cart-btn" onclick="cartIconClickHandler()">
-                  <span class="cart-items-counter"></span>
-                </div>
+                <div class="fas fa-shopping-cart" id="cart-btn" onclick="cartIconClickHandler()"></div>
                 <div class="fas fa-bars" id="menu-btn" onclick="menuIconClickHandler()"></div>
               </div>
         

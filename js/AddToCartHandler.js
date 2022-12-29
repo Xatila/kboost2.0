@@ -1,7 +1,10 @@
 export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
-  let productsCounter = document.querySelector(".cart-items-counter");
+  const cartIcon = document.getElementById("cart-btn");
+  const productsCounter = document.createElement("div");
+  cartIcon.appendChild(productsCounter);
+  productsCounter.className = "cart-items-counter";
 
   productsCounter.innerText = allProducts.length;
 
