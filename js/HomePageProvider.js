@@ -7,7 +7,7 @@ class Home extends HTMLElement {
         Proteins, creatines, gainers, bcaa's and clothes. Top quality company in
         food supplements.
       </p>
-      <a href="#menu" class="btn">get yours now</a>
+      <a href="./pages/supplements.html" class="btn">get yours now</a>
     </div>
   </section>`;
   }

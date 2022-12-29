@@ -739,9 +739,9 @@ img {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 330px) {
   .header .search-form.active {
-    width: 100px;
+    width: 120px;
   }
 }
 
