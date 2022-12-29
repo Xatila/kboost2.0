@@ -1,0 +1,107 @@
+<script src="../js/NavBarIconsClickHandler.js"></script>
+<script src="../js/PromoMessageProvider.js"></script>
+<script src="../js/HeartsColorHandler.js"></script>
+<script type="module" src="../js/HeaderProvider.js"></script>
+<script type="module" src="../js/FooterProvider.js"></script>
+<script type="module" src="../js/SupplementsProvider.js"></script>
+
+<my-header></my-header>
+
+<!-- menu section starts  -->
+<section class="menu" id="menu">
+  <h1 class="heading">our <span>supplements</span></h1>
+  <div class="box-container" id="supplementsItems"></div>
+</section>
+<!-- menu section ends -->
+
+<!-- promo section starts -->
+<section class="products promo" id="products">
+  <h1 class="heading">promo <span>packs</span></h1>
+
+  <div class="box-container">
+    <div id="rare" class="box">
+      <div class="icons">
+        <a
+          href="#rare"
+          class="fas fa-shopping-cart"
+          onclick="PromoMessage()"
+        ></a>
+        <a href="#rare" class="fas fa-heart" onclick="giveLike('rare')"></a>
+        <a href="#rare" class="fas fa-eye"></a>
+      </div>
+      <div class="image">
+        <img src="../images/rarePack.png" alt="" />
+      </div>
+      <div class="content">
+        <h3>rare pack</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="price">$49.99 <span>$79.99</span></div>
+      </div>
+    </div>
+
+    <div id="legendary" class="box">
+      <div class="icons">
+        <a
+          href="#legendary"
+          class="fas fa-shopping-cart"
+          onclick="PromoMessage()"
+        ></a>
+        <a
+          href="#legendary"
+          class="fas fa-heart"
+          onclick="giveLike('legendary')"
+        ></a>
+        <a href="#legendary" class="fas fa-eye"></a>
+      </div>
+      <div class="image">
+        <img src="../images/legendaryPack.png" alt="" />
+      </div>
+      <div class="content">
+        <h3>legendary pack</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="price">$89.99 <span>$120.99</span></div>
+      </div>
+    </div>
+
+    <div id="ultra" class="box">
+      <div class="icons">
+        <a
+          href="#ultra"
+          class="fas fa-shopping-cart"
+          onclick="PromoMessage()"
+        ></a>
+        <a href="#ultra" class="fas fa-heart" onclick="giveLike('ultra')"></a>
+        <a href="#ultra" class="fas fa-eye"></a>
+      </div>
+      <div class="image">
+        <img src="../images/ultraPack.png" alt="" />
+      </div>
+      <div class="content">
+        <h3>ultra pack</h3>
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="price">$135.99 <span>$210.99</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- promo section ends -->
+
+<my-footer></my-footer>
