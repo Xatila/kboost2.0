@@ -2,7 +2,6 @@ export const AddToCartHandler = () => {
   let allProducts = [];
   const checkOutButton = document.getElementById("checkOut");
   let productsCounter = document.querySelector(".cart-items-counter");
-  let cartItem = document.querySelector(".cart-items-container");
 
   productsCounter.innerText = allProducts.length;
 
@@ -13,8 +12,8 @@ export const AddToCartHandler = () => {
     let price = 0;
     for (const product of allProducts) {
       for (const key in product) {
-        let currentPrice = product["price"];
-        price += Number(currentPrice);
+        let currentPrice = product.price;
+        price += Number(currentPrice.slice(1, currentPrice.length));
         break;
       }
     }
@@ -24,32 +23,21 @@ export const AddToCartHandler = () => {
 
   //Add EventListeners
   checkOutButton && checkOutButton.addEventListener("click", getTotalPrice);
+
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const name = btn.previousSibling.previousSibling.textContent;
+      const img = btn.previousSibling.previousSibling.previousSibling.src;
+      const price = btn.previousSibling.firstChild.textContent;
+      const id = Math.random() * Math.random();
+      allProducts.push({ name: name, img: img, price: price, id: id });
+      document
+        .getElementById("emptyCartTitle")
+        .classList.add("hiddenEmptyCart");
       checkOutButton.textContent = "Check Out";
-      let currentProduct = {};
-      currentProduct.id = Math.random() * Math.random();
-
-      //Get Price
-      const priceAsText = btn.previousElementSibling.textContent;
-      let price = "";
-      for (let i = 1; i < 6; i++) {
-        price += priceAsText[i];
-      }
-
-      //Get Name
-      const name =
-        btn.previousElementSibling.previousElementSibling.textContent;
-      alert(`${name} has been aded to your cart!`);
-
-      //Get Picture Path
-      const picture =
-        btn.previousElementSibling.previousElementSibling
-          .previousElementSibling;
-      let picturePath = picture.src;
-
-      //Create Product
+      const cartItemsParent = document.querySelector(".cart-items-container");
       const itemToAdd = document.createElement("div");
+      itemToAdd.setAttribute("id", allProducts[allProducts.length - 1].id);
       itemToAdd.classList.add("cart-item");
       const deleteButton = document.createElement("span");
       const itemImg = document.createElement("img");
@@ -61,37 +49,32 @@ export const AddToCartHandler = () => {
       itemToAdd.appendChild(deleteButton);
       deleteButton.innerText = "X";
       deleteButton.className = "delete-btn";
-      deleteButton.addEventListener("click", () => {
-        allProducts = allProducts.filter(
-          (item) => item.id !== currentProduct.id
-        );
-
-        console.log(allProducts);
-      });
+      cartItemsParent.appendChild(itemToAdd);
       itemToAdd.appendChild(itemImg);
       itemToAdd.appendChild(divContent);
       divContent.appendChild(itemName);
       divContent.appendChild(itemPrice);
-      productsCounter.innerText = allProducts.length + 1;
-
-      //Set Product Data
-      itemName.textContent = name;
-      itemImg.src = picturePath;
-      itemPrice.textContent = `$${price}`;
-      cartItem && cartItem.insertBefore(itemToAdd, cartItem.children[0]);
-      if (document.getElementById("emptyCart")) {
-        document.getElementById("emptyCart").remove();
-      }
-
-      //Fill Object
-      currentProduct["name"] = name;
-      currentProduct["price"] = price;
-      currentProduct["imgUrl"] = picturePath;
-      allProducts.push(currentProduct);
+      productsCounter.innerText = allProducts.length;
+      itemName.textContent = allProducts[allProducts.length - 1].name;
+      itemImg.src = allProducts[allProducts.length - 1].img;
+      itemPrice.textContent = allProducts[allProducts.length - 1].price;
+      cartItemsParent &&
+        cartItemsParent.insertBefore(itemToAdd, cartItemsParent.children[0]);
+      deleteButton.addEventListener("click", () => {
+        allProducts = allProducts.filter((item) => item.id !== id);
+        checkOutButton.textContent = "Check Out";
+        productsCounter.innerText = allProducts.length;
+        document.getElementById(id).remove();
+        !allProducts.length && checkOutButton.classList.add("disabled");
+        !allProducts.length && checkOutButton.setAttribute("disabled", "");
+        !allProducts.length &&
+          document
+            .getElementById("emptyCartTitle")
+            .classList.remove("hiddenEmptyCart");
+      });
 
       allProducts.length && checkOutButton.classList.remove("disabled");
-      allProducts.length && checkOutButton.removeAttribute("disabled");
-      console.log(allProducts);
+      allProducts.length && checkOutButton.removeAttribute("disabled", "");
     });
   });
 };

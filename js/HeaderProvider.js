@@ -51,7 +51,7 @@ class MyHeader extends HTMLElement {
         
               <div class="cart-items-container" id="cart-items">
                 <div id="emptyCart" class="cart-item">
-                  <div class="content">
+                  <div id="emptyCartTitle" class="content">
                     <h3>Your cart is empty.</h3>
                   </div>
                 </div>

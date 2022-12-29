@@ -133,6 +133,10 @@ section {
   transform: translateX(-16px) translateY(-6px);
 }
 
+.hiddenEmptyCart {
+  display: none;
+}
+
 .header .icons div:hover {
   color: var(--main-color);
 }
