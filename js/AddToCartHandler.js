@@ -37,7 +37,7 @@ export const AddToCartHandler = () => {
       checkOutButton.textContent = "Check Out";
       const cartItemsParent = document.querySelector(".cart-items-container");
       const itemToAdd = document.createElement("div");
-      itemToAdd.setAttribute("id", allProducts[allProducts.length - 1].id);
+      itemToAdd.setAttribute("id", id);
       itemToAdd.classList.add("cart-item");
       const deleteButton = document.createElement("span");
       const itemImg = document.createElement("img");
@@ -55,9 +55,9 @@ export const AddToCartHandler = () => {
       divContent.appendChild(itemName);
       divContent.appendChild(itemPrice);
       productsCounter.innerText = allProducts.length;
-      itemName.textContent = allProducts[allProducts.length - 1].name;
-      itemImg.src = allProducts[allProducts.length - 1].img;
-      itemPrice.textContent = allProducts[allProducts.length - 1].price;
+      itemName.textContent = name;
+      itemImg.src = img;
+      itemPrice.textContent = price;
       cartItemsParent &&
         cartItemsParent.insertBefore(itemToAdd, cartItemsParent.children[0]);
       deleteButton.addEventListener("click", () => {
