@@ -23,7 +23,7 @@ class MyHeader extends HTMLElement {
             <!-- header section starts  -->
         
             <header class="header">
-              <a href="index.html" class="logo">
+              <a href="../index.html" class="logo">
                 <img src="../images/logo.png" alt="" />
               </a>
         
@@ -39,13 +39,14 @@ class MyHeader extends HTMLElement {
                 <div class="fas fa-search" id="search-btn" onclick="searchIconClickHandler()"></div>
                 <!-- make items in cart stackable and removable -->
                 <div class="fas fa-shopping-cart" id="cart-btn" onclick="cartIconClickHandler()">
-                  <div class="cart-items-counter"></div>
+                  <span class="cart-items-counter"></span>
                 </div>
+                <div class="fas fa-bars" id="menu-btn" onclick="menuIconClickHandler()"></div>
               </div>
         
               <div class="search-form" id="search-form">
                 <input type="search" id="search-box" placeholder="Search" />
-                <label for="search-box" class="fas fa-search"></label>
+                <label for="search-box" class="fas fa-search" onclick="searchIconClickHandler()"></label>
               </div>
         
               <div class="cart-items-container" id="cart-items">
@@ -54,7 +55,7 @@ class MyHeader extends HTMLElement {
                     <h3>Your cart is empty.</h3>
                   </div>
                 </div>
-                <button id="checkOut" href="#box" class="btn" onclick="getTotalPrice()">
+                <button id="checkOut" href="#box" class="btn">
                   Check Out
                 </button>
               </div>

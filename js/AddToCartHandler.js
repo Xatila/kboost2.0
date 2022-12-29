@@ -5,7 +5,10 @@ export const AddToCartHandler = () => {
   let cartItem = document.querySelector(".cart-items-container");
 
   productsCounter.innerText = allProducts.length;
-  !allProducts && checkOutButton.setAttribute("disabled", "");
+
+  !allProducts.length && checkOutButton.classList.add("disabled");
+  !allProducts.length && checkOutButton.setAttribute("disabled", "");
+
   const getTotalPrice = () => {
     let price = 0;
     for (const product of allProducts) {
@@ -25,6 +28,8 @@ export const AddToCartHandler = () => {
     btn.addEventListener("click", () => {
       checkOutButton.textContent = "Check Out";
       let currentProduct = {};
+      currentProduct.id = Math.random() * Math.random();
+
       //Get Price
       const priceAsText = btn.previousElementSibling.textContent;
       let price = "";
@@ -54,6 +59,15 @@ export const AddToCartHandler = () => {
       const itemPrice = document.createElement("div");
       itemPrice.classList.add("price");
       itemToAdd.appendChild(deleteButton);
+      deleteButton.innerText = "X";
+      deleteButton.className = "delete-btn";
+      deleteButton.addEventListener("click", () => {
+        allProducts = allProducts.filter(
+          (item) => item.id !== currentProduct.id
+        );
+
+        console.log(allProducts);
+      });
       itemToAdd.appendChild(itemImg);
       itemToAdd.appendChild(divContent);
       divContent.appendChild(itemName);
@@ -74,6 +88,10 @@ export const AddToCartHandler = () => {
       currentProduct["price"] = price;
       currentProduct["imgUrl"] = picturePath;
       allProducts.push(currentProduct);
+
+      allProducts.length && checkOutButton.classList.remove("disabled");
+      allProducts.length && checkOutButton.removeAttribute("disabled");
+      console.log(allProducts);
     });
   });
 };

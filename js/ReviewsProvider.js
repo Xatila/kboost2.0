@@ -6,7 +6,7 @@ class Reviews extends HTMLElement {
         <div class="box-container">
           <div class="box">
             <img src="../images/quote-img.png" alt="" class="quote" />
-            <p>Amazing products. I fell alive again! Thank you K-boost!</p>
+            <p>Amazing products. I feel alive again! Thank you K-boost!</p>
             <img src="../images/pic-1.png" class="user" alt="" />
             <h3>Yusein Kerdakov</h3>
             <div class="stars">
@@ -42,6 +42,7 @@ class Reviews extends HTMLElement {
             <img src="../images/pic-3.png" class="user" alt="" />
             <h3>Kevin Baliev</h3>
             <div class="stars">
+              <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>
               <i class="fas fa-star"></i>

@@ -3,14 +3,14 @@ function giveLike(typePromo) {
   typePromo === "rare" && changeColor(hearts[0]);
   typePromo === "legendary" && changeColor(hearts[1]);
   typePromo === "ultra" && changeColor(hearts[2]);
-  console.log(typePromo);
 }
 function changeColor(typePromo) {
   const isWhiteColor = typePromo.style.color === "white";
-  if (isWhiteColor) {
+  const isColorFalse = !typePromo.style.color;
+  if (isWhiteColor || isColorFalse) {
     typePromo.style.color = "red";
+    return;
   }
-  if (!isWhiteColor) {
-    typePromo.style.color = "white";
-  }
+
+  typePromo.style.color = "white";
 }
