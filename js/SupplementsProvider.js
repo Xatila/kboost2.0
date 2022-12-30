@@ -44,3 +44,5 @@ supplements.length &&
   });
 
 AddToCartHandler();
+
+//TODO add a modal with additional information for the supplements
