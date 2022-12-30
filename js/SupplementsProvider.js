@@ -6,6 +6,7 @@ import {
   NEW_BOX_ELEMENT_CLASSNAME,
   PRICE_DIV_CLASSNAME,
   ADD_TO_CART_BUTTON_CLASSNAME,
+  ADD_TO_CART_BUTTON_CLASSNAME_2,
 } from "./../constants/StrongHardCodedValues.js";
 
 const supplements = getSupplements();
@@ -39,6 +40,7 @@ supplements.length &&
 
     addToCartButton.textContent = supplementsAddToCartButtonTextKey;
     addToCartButton.className = ADD_TO_CART_BUTTON_CLASSNAME;
+    addToCartButton.classList.add = ADD_TO_CART_BUTTON_CLASSNAME_2;
   });
 
 AddToCartHandler();

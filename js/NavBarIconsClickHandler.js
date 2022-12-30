@@ -48,6 +48,10 @@ const menuIconClickHandler = () => {
   document.getElementById("cart-items").classList.remove("active");
 };
 
+const closeCartHandler = () => {
+  document.getElementById("cart-items").classList.remove("active");
+};
+
 window.onscroll = () => {
   document.getElementById("navbar").classList.remove("active");
   document.getElementById("search-form").classList.remove("active");

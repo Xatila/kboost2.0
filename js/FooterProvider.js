@@ -1,6 +1,6 @@
 class MyFooter extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `<!-- footer section starts  -->
+    this.innerHTML = `
         <section class="footer">
           <div class="share">
             <a
@@ -17,7 +17,6 @@ class MyFooter extends HTMLElement {
               class="fab fa-linkedin"
             ></a>
           </div>
-        
           <div class="links">
           <a href="../index.html">home</a>
           <a href="../pages/about.html">about</a>
@@ -30,7 +29,6 @@ class MyFooter extends HTMLElement {
             created by <span>Kevin Baliev</span> | all rights reserved
           </div>
         </section>
-        <!-- footer section ends -->       
         </body>
         </html>
         `;
