@@ -7,7 +7,7 @@ export const getClothes = () => [
   },
   {
     image: "../images/women_clothes/pants2.png",
-    name: "grey&black pants",
+    name: "grey & black pants",
     price: "$20.99",
     discountPrice: false,
   },

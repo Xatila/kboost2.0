@@ -8,17 +8,19 @@
 <my-footer>
   <script src="./notifier/notifier.min.js"></script>
   <script>
-    const showNotification = notifier.show(
-      "❤️ Welcome!",
-      "We at K-boost are glad to have you here!",
-      "welcome",
-      "",
-      "",
-      0
-    );
+    if (document.cookie.indexOf("visited") === 0) {
+      const showNotification = notifier.show(
+        "❤️ Welcome!",
+        "We at K-boost are glad to have you here!",
+        "welcome",
+        "",
+        "",
+        0
+      );
 
-    setTimeout(() => {
-      notifier.hide(showNotification);
-    }, 3500);
+      setTimeout(() => {
+        notifier.hide(showNotification);
+      }, 3500);
+    }
   </script>
 </my-footer>

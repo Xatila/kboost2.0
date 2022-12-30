@@ -143,6 +143,7 @@ section {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  background-color: white;
   padding-bottom: 24px;
 }
 

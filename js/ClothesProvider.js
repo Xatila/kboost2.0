@@ -42,3 +42,5 @@ clothes.length &&
   });
 
 AddToCartHandler();
+
+//TODO add a modal with additional information for the clothes
