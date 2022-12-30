@@ -6,18 +6,12 @@
 <script type="module" src="../js/SupplementsProvider.js"></script>
 
 <my-header></my-header>
-
-<!-- menu section starts  -->
 <section class="menu" id="menu">
   <h1 class="heading">our <span>supplements</span></h1>
   <div class="box-container" id="supplementsItems"></div>
 </section>
-<!-- menu section ends -->
-
-<!-- promo section starts -->
 <section class="products promo" id="products">
   <h1 class="heading">promo <span>packs</span></h1>
-
   <div class="box-container">
     <div id="rare" class="box">
       <div class="icons">
@@ -44,7 +38,6 @@
         <div class="price">$49.99 <span>$79.99</span></div>
       </div>
     </div>
-
     <div id="legendary" class="box">
       <div class="icons">
         <a
@@ -74,7 +67,6 @@
         <div class="price">$89.99 <span>$120.99</span></div>
       </div>
     </div>
-
     <div id="ultra" class="box">
       <div class="icons">
         <a
@@ -102,6 +94,19 @@
     </div>
   </div>
 </section>
-<!-- promo section ends -->
+<script src="../notifier/notifier.min.js"></script>
+<script>
+  const showNotification = notifier.show(
+    "💪🏽 Our Supplements!",
+    "Here you will find the best friend of your diet!",
+    "info",
+    "",
+    "",
+    0
+  );
 
+  setTimeout(() => {
+    notifier.hide(showNotification);
+  }, 3500);
+</script>
 <my-footer></my-footer>

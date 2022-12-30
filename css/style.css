@@ -139,6 +139,27 @@ section {
   display: none;
 }
 
+.cart-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 24px;
+}
+
+#closeCart {
+  width: 35%;
+  padding: 4px;
+  margin-right: 10px;
+  border-radius: 15px 0 15px 0;
+  background-color: tomato;
+}
+
+#checkOut {
+  width: 65%;
+  padding: 4px;
+  border-radius: 15px 0 15px 0;
+}
+
 .header .icons div:hover {
   color: var(--main-color);
 }

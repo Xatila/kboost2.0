@@ -29,4 +29,19 @@
     </div>
   </div>
 </section>
+<script src="../notifier/notifier.min.js"></script>
+<script>
+  const showNotification = notifier.show(
+    "ℹ️ About us!",
+    "We are glad that you want to know more about us! ",
+    "info",
+    "",
+    "",
+    0
+  );
+
+  setTimeout(() => {
+    notifier.hide(showNotification);
+  }, 3500);
+</script>
 <my-footer></my-footer>
