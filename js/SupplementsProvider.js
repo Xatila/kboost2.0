@@ -42,7 +42,31 @@ supplements.length &&
     addToCartButton.className = ADD_TO_CART_BUTTON_CLASSNAME;
     addToCartButton.classList.add = ADD_TO_CART_BUTTON_CLASSNAME_2;
   });
-
 AddToCartHandler();
 
-//TODO add a modal with additional information for the supplements
+const allBoxes = document.querySelectorAll(".box img");
+let modal = document.getElementById("myModal");
+let modalContent = document.querySelector(".modal-content");
+let span = document.getElementsByClassName("close")[0];
+const imageModal = document.createElement("img");
+const supplementNameElement = document.createElement("h3");
+allBoxes.forEach((img) => {
+  img.addEventListener("click", () => {
+    imageModal.src=img.src;
+    imageModal.style="float:left; width: fit-content; height: 120px; padding: 5px;";
+    modalContent.insertBefore(imageModal, modalContent.firstChild);
+    supplementNameElement.textContent=img.nextSibling.textContent
+    modalContent.appendChild(supplementNameElement, span);
+    modal.style.display = "block";
+    
+  });
+});
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+//TODO FIX IMG POSITIONING ON MODAL;
